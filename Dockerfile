@@ -10,7 +10,7 @@ RUN dotnet restore PizzaStore.csproj
 RUN dotnet build PizzaStore.csproj -o out
 
 # Build runtime image
-FROM FROM mcr.microsoft.com/dotnet/aspnet:6.0
+FROM mcr.microsoft.com/dotnet/aspnet:6.0
 WORKDIR /App
 COPY --from=build-env /App/out .
 ENTRYPOINT ["dotnet", "PizzaStore.dll"]
