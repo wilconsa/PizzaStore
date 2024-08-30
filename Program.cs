@@ -8,9 +8,10 @@ app.Run();
 */
 using Microsoft.OpenApi.Models;
 using PizzaStore.DB;
-
+using System.Net;
 
 var builder = WebApplication.CreateBuilder(args);
+string hostName = System.Net.Dns.GetHostName();
     
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(c =>
@@ -29,7 +30,7 @@ if (app.Environment.IsDevelopment())
    });
 }
     
-app.MapGet("/", () => "Hello World!");
+app.MapGet("/", () => "Hello World! in "+hostName.ToString());
 
 app.MapGet("/pizzas/{id}", (int id) => PizzaDB.GetPizza(id));
 app.MapGet("/pizzas", () => PizzaDB.GetPizzas());
