@@ -23,11 +23,11 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: my-app-lb
+  name: my-pstore-lb
 spec:
   type: LoadBalancer
   selector:
-    app: my-app
+    app: pstore-app
   ports:
     - protocol: TCP
       port: 8081
