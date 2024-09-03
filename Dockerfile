@@ -18,4 +18,4 @@ WORKDIR /App
 
 COPY --from=build-env /App/out .
 # RUN dotnet run PizzaStore.dll --project /App/out/PizzaStore.csproj
-ENTRYPOINT ["dotnet", "PizzaStore.dll"]
+ENTRYPOINT ["dotnet", "PizzaStore"]
