@@ -17,7 +17,7 @@ spec:
       - name: pstore-app
         image: wilconsadocker/pizzastore:@@VERSION@@
         ports:
-        - containerPort: 8080
+        - containerPort: 8081
 #      nodeName: wnode2
 ---
 apiVersion: v1
@@ -30,5 +30,5 @@ spec:
     app: pstore-app
   ports:
     - protocol: TCP
-      port: 8080
+      port: 8081
 # externalTrafficPolicy: Local
