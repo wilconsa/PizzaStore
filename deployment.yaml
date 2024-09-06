@@ -25,8 +25,9 @@ kind: Service
 metadata:
   name: my-pstore-lb
 spec:
-  type: NodePort
-  #LoadBalancer
+  type: LoadBalancer 
+  #NodePort
+  #
   selector:
     app: pstore-app
   ports:
@@ -34,5 +35,8 @@ spec:
       port: 8080
       targetPort: 8080
       nodePort: 30007
-
+status:
+  loadBalancer:
+    ingress:
+    - ip: 192.168.1.38
 # externalTrafficPolicy: Local
